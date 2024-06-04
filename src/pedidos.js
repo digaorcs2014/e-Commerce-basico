@@ -3,9 +3,9 @@ import { lerlocalStorage, desenharProdutoNoCarrinhoSimples, } from "./utilidades
 function criarPedidoHistorico(pedidoComData) {
     const elementoPedido = `<p class="text-xl text-bold my-4"> ${new Date(
         pedidoComData.dataPedido).
-        toLocaleDateString['pt-BR',{
-            hour:'2-digit',
-            minute:'2-digit',
+        toLocaleDateString['pt-BR', {
+            hour: '2-digit',
+            minute: '2-digit',
         }]}</p>
     <section id='container-pedidos-${pedidoComData.dataPedido}' class='bg-slate-300 p-3'> </section>
     `
@@ -14,7 +14,7 @@ function criarPedidoHistorico(pedidoComData) {
 
     for (const idProduto in pedidoComData.pedido) {
         desenharProdutoNoCarrinhoSimples(
-            idProduto, `container-pedidodos${pedidoComData.dataPedido}`,
+            idProduto, `container-pedidos-${pedidoComData.dataPedido}`,
             pedidoComData.pedido[idProduto]);
     }
 
@@ -22,10 +22,10 @@ function criarPedidoHistorico(pedidoComData) {
 
 function renderizarHistoricoPedidos() {
     const historico = lerlocalStorage('historico');
-    for (const pedidoComData of historico){
+    for (const pedidoComData of historico) {
         criarPedidoHistorico(pedidoComData);
     }
 
 }
 
-renderizarHistoricoPedidos
+renderizarHistoricoPedidos();
