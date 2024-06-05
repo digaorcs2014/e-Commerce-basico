@@ -110,4 +110,4 @@ export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, qua
     elementoArticle.innerHTML = cartaoProdutoCarrinho
     containerProdutoCarrinho.appendChild(elementoArticle);
 }
-  atualizarPrecoCarrinho();
+  

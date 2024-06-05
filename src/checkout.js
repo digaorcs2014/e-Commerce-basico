@@ -15,7 +15,7 @@ function finalizarCompra(evento){
     evento.preventDefault();
    
     const idsProdutoCarrinhoComQuantidade = lerlocalStorage("carrinho")?? {};
-    if(Object.keys(idsProdutoCarrinhoComQuantidade).length === 0){
+    if ( Object.keys(idsProdutoCarrinhoComQuantidade).length === 0){
         return;
     }
     const dataAtual = new Date();
@@ -29,6 +29,6 @@ function finalizarCompra(evento){
     apagarLocalStorage('carrinho')
     window.location.href = './pedidos.html';
 }
-
+atualizarPrecoCarrinho();
 desenharProdutoCheckout();
 document.addEventListener('submit', (evt) => finalizarCompra(evt));
