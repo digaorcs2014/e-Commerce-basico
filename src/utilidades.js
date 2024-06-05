@@ -65,6 +65,8 @@ export const catalogo = [
   },
 ];
 
+import { atualizarPrecoCarrinho } from "./menuCarrinho";
+
 export function salvarlocalstorage(chave, informacao) {
   localStorage.setItem(chave, JSON.stringify(informacao));
 }
@@ -105,6 +107,7 @@ export function desenharProdutoNoCarrinhoSimples(idProduto, idContainerHtml, qua
       <p id='quantidade-${produto.id}'class='ml-2'>${quantidadeProduto}</p>
       
     </div>` ;
-    containerProdutoCarrinho.innerHTML = cartaoProdutoCarrinho
+    elementoArticle.innerHTML = cartaoProdutoCarrinho
     containerProdutoCarrinho.appendChild(elementoArticle);
 }
+  atualizarPrecoCarrinho();
